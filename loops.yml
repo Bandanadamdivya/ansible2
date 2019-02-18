@@ -1,0 +1,12 @@
+- hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: install git,tree and wget on ubuntu14
+    apt:
+     name: "{{item}}"
+     static: present
+    with_items:
+      -git
+      -tree
+      -wget
